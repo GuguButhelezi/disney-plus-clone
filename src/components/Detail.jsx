@@ -130,7 +130,7 @@ const Player = styled.button`
   border-radius: 6px;
   display: flex;
   align-items: center;
-  cursor: none;
+  cursor: not-allowed;
   justify-content: center;
   letter-spacing: 1.6px;
   text-align: center;

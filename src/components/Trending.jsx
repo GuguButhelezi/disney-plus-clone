@@ -20,7 +20,7 @@ function Trending() {
                   <img src={movie.cardImg} alt={movie.title} />
                 </Link>
               </Wrap>
-            ))}
+            )).slice(0, 4)}
         </Content>
       </Container>
     </>

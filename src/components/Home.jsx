@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import homebackground from "../assets/images/home-background.png";
 import React from "react";
 import ImageSlider from "./ImageSlider";
 import Viewers from "./Viewers";
@@ -13,6 +12,7 @@ import { setMovies } from "../features/movie/movieSlice";
 import { selectUserName } from "../features/user/userSlice";
 import Trending from "./Trending";
 import { useNavigate } from "react-router-dom";
+import Login from "./Login";
 
 function Home() {
   const dispatch = useDispatch();
@@ -24,9 +24,11 @@ function Home() {
   let trending = [];
 
   useEffect(() => {
-    if (!userName){
-      navigate('/')
-    }
+    // if (!userName){
+    //   navigate('/')} 
+    // else{
+
+    
     
     db.collection("movies").onSnapshot((snapshot) => {
       snapshot.docs.map((doc) => {
@@ -56,19 +58,21 @@ function Home() {
           trending: trending,
         })
       );
-    });
+    })
+  // };
   }, [userName]);
 
   return (
     <>
-      <Container className="home__main">
+    {!userName ? <Login/> : <Container className="home__main">
         <ImageSlider />
         <Viewers />
         <Recommends />
         <NewDisney />
         <Originals />
         <Trending />
-      </Container>
+      </Container>}
+      
     </>
   );
 }

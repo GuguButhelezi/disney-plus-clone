@@ -201,11 +201,10 @@ const NavMenu = styled.div`
       width: auto;
     }
   }
+  @media (max-width: 768px) {
+      display: none;
+    };
 `;
-
-//   @media (max-width: 768px) {
-//       // display: none;
-//     };
 
 const Login = styled.a`
   background-color: rgba(0, 0, 0, 0.6);

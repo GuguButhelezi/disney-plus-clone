@@ -9,6 +9,7 @@ import marvelVid from '../assets/videos/1564676115-marvel.mp4'
 import nationalVid from '../assets/videos/1564676296-national-geographic.mp4'
 import pixarVid from '../assets/videos/1564676714-pixar.mp4'
 import starwarsVid from '../assets/videos/1608229455-star-wars.mp4'
+import disneyVid from '../assets/videos/1564674844-disney.mp4'
 
 function Viewers() {
   return (
@@ -17,7 +18,7 @@ function Viewers() {
         <Wrap>
           <img src={viewersDisney}/>
           <video autoPlay={true} loop={true} playsInline={true}>
-            <source src="/videos/1564674844-disney.mp4" type="video/mp4"/>
+            <source src={disneyVid} type="video/mp4"/>
           </video>
         </Wrap>
         <Wrap>
