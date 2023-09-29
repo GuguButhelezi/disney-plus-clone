@@ -12,9 +12,11 @@ import db from "../firebase";
 import { setMovies } from "../features/movie/movieSlice";
 import { selectUserName } from "../features/user/userSlice";
 import Trending from "./Trending";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const userName = useSelector(selectUserName);
   let recommends = [];
   let newDisneys = [];
@@ -22,6 +24,10 @@ function Home() {
   let trending = [];
 
   useEffect(() => {
+    if (!userName){
+      navigate('/')
+    }
+    
     db.collection("movies").onSnapshot((snapshot) => {
       snapshot.docs.map((doc) => {
         switch (doc.data().type) {

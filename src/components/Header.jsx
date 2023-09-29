@@ -60,6 +60,8 @@ function Header() {
     auth.onAuthStateChanged(async (user) => {
       if (user){
         history('/home')
+      } else {
+        history('/')
       }
     })
   }, [username])
@@ -131,7 +133,6 @@ const Nav = styled.nav`
 const Logo = styled.a`
   padding: 0;
   width: 76px;
-  margin-top: 8px;
   max-height: 64px;
   font-size: 0;
   display: inline-block;
